@@ -3,14 +3,14 @@
 JVMLevel=
 LSID=urn:lsid:genepattern.org:module.analysis:00443
 author=Joe Salvasson, modified into a GenePattern module as Ted Liefeld
-commandLine=python /build/tfsites-webportal/04-findTfSitesAlteredBySequenceVariation/04-findTfSitesAlteredBySequenceVariation.py  -d <DNA.sequences.to.annotate> -r <affinity.reference.data>  <PWM.data>  <PWM.minimum.score>    <SNV.effect.type.to.report> <affinity.optimization.threshold> <affinity.reduction.threshold> <output.image.as.svg> <zoom.range> <plot.resolution> -n <TF.name> -c <TF.color> <core.binding.site.definition>  -O  <output.filename>
+commandLine=python /build/tfsites-webportal/04-findTfSitesAlteredBySequenceVariation/04-findTfSitesAlteredBySequenceVariation.py  -d <DNA.sequences.to.annotate> -r <affinity.reference.data>  <PWM.data>  <PWM.minimum.score>    <SNV.effect.type.to.report> <affinity.optimization.threshold> <affinity.reduction.threshold> <output.image.as.svg> <zoom.range> <plot.resolution> -n <TF.name> <core.binding.site.definition>  -O  <output.filename>
 
 cpuType=any
 description=FindTfSitesAlteredBySequenceVariation reports the effects of all possible in silico single-nucleotide variants (SNVs) in a given sequence, for one transcription factor. Possible SNV effects include increasing (or optimizing) the affinity/score of a binding site, decreasing the affinity/score of a binding site, deleting a binding site, or creating a binding site.
 documentationUrl=https://genepattern.github.io/tfsites.FindTfSitesAlteredBySequenceVariation/v2/
 fileFormat=
 job.cpuCount=
-job.docker.image=genepattern/tfsites\:0.15.2
+job.docker.image=genepattern/tfsites\:15.5.2
 job.memory=
 job.walltime=
 language=any
@@ -46,17 +46,18 @@ p2_value=
 
 p3_MODE=
 p3_TYPE=TEXT
-p3_default_value=blue
-p3_description=Color assigned to binding sites on output visualization.
+p3_default_value=<TF.name>_<core.binding.site.definition>_<affinity.reference.data_basename>
+p3_description=Output filename prefix.
 p3_fileFormat=
 p3_flag=
-p3_name=TF.color
-p3_numValues=0..1
+p3_name=output.filename
+p3_numValues=1..1
 p3_optional=
 p3_prefix=
-p3_prefix_when_specified=
+p3_prefix_when_specified= 
 p3_type=java.lang.String
 p3_value=
+
 
 p4_MODE=
 p4_TYPE=TEXT
@@ -127,7 +128,7 @@ p8_optional=
 p8_prefix=
 p8_prefix_when_specified=-S  
 p8_type=java.lang.String
-p8_value=True;False
+p8_value=TRUE:FALSE
 
 p9_MODE=
 p9_TYPE=TEXT
@@ -198,21 +199,6 @@ p13_prefix=
 p13_prefix_when_specified=-z  
 p13_type=java.lang.String
 p13_value=
-
-p14_MODE=
-p14_TYPE=TEXT
-p14_default_value=<TF.name>_<core.binding.site.definition>_<affinity.reference.data_basename>
-p14_description=Output filename prefix.
-p14_fileFormat=
-p14_flag=
-p14_name=output.filename
-p14_numValues=1..1
-p14_optional=
-p14_prefix=
-p14_prefix_when_specified=   
-p14_type=java.lang.String
-p14_value=
-
 
 
 privacy=public
