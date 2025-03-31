@@ -6,7 +6,6 @@
         "parameters": [
             "DNA.sequences.to.annotate",
             "TF.name",
-            "TF.color",
             "core.binding.site.definition",
  	    "affinity.reference.data",
 	    "PWM.data",
