@@ -46,7 +46,7 @@ p2_value=
 
 p3_MODE=
 p3_TYPE=TEXT
-p3_default_value=<TF.name>_<core.binding.site.definition>_<affinity.reference.data_basename>
+p3_default_value=output
 p3_description=Output filename prefix.
 p3_fileFormat=
 p3_flag=
