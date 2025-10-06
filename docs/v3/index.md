@@ -49,8 +49,6 @@ If the user wishes to analyze only a portion of the sequence, then a zoom range 
     - File containing one or more DNA sequences to be annotated. 
 - <span style="color: red;">*</span>**TF name (string)**
     - Name of the transcription factor to use for SNV analysis.
-- <span style="color: red;">*</span>**TF color (string)**
-    - Color assigned to binding sites on output visualization.
 - **core binding site definition (string)**
     - `Default = None`
     - IUPAC definition of core TF binding site (see [here](https://www.bioinformatics.org/sms/iupac.html)). Only optional if using PWM data but required if using affinity data.

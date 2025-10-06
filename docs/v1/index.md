@@ -1,6 +1,6 @@
 # tfsites.AnnotateAndVisualizeInSilicoSnvs v1
 
-**Author(s):** Joe Solvason  
+**Author(s):** Joe Solvason
 
 **Contact:** Joe Solvason (solvason@eng.ucsd.edu)
 
