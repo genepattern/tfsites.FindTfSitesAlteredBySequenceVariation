@@ -1,3 +1,5 @@
+#updated after building 4.2
+#Tue, 07 Oct 2025 14:23:24 -0400
 #updated after building 4.1
 #Mon, 06 Oct 2025 10:13:16 -0400
 #prerelease version number
@@ -18,4 +20,4 @@
 #Wed, 11 Dec 2024 17:49:19 -0500
 #updated after building 0.0
 #Thu, 14 Dec 2023 15:57:54 -0500
-prerelease.number=2
+prerelease.number=3
