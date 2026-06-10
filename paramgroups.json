@@ -37,7 +37,8 @@
             "motif.filter.keywords",
             "motif.use.pseudocounts",
             "motif.background.frequencies",
-            "motif.output.name"
+            "motif.output.name",
+            "motif.exact.match"
         ]
     }
 ]
