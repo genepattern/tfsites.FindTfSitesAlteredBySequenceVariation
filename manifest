@@ -278,7 +278,7 @@ p19_name=motif.output.name
 p19_numValues=0..1
 p19_optional=on
 p19_prefix=
-p19_prefix_when_specified=--motif_output_name
+p19_prefix_when_specified=--motif_output_name   
 p19_type=java.lang.String
 p19_value=
 
@@ -292,7 +292,7 @@ p20_name=motif.exact.match
 p20_numValues=0..1
 p20_optional=on
 p20_prefix=
-p20_prefix_when_specified=--motif_exact_match
+p20_prefix_when_specified=--motif_exact_match   
 p20_type=java.lang.String
 p20_value=FALSE\=FALSE;TRUE\=TRUE
 
