@@ -3,14 +3,14 @@
 JVMLevel=
 LSID=urn:lsid:genepattern.org:module.analysis:00443
 author=Joe Solvasson, modified into a GenePattern module as Ted Liefeld
-commandLine=python /build/tfsites-webportal/04-findTfSitesAlteredBySequenceVariation/04-combined-generateMotifDatabase-and-findTfSitesAlteredBySequenceVariation.py  -d <DNA.sequences.to.annotate> <affinity.reference.data>  <PWM.data>  <PWM.minimum.score>    <SNV.effect.type.to.report> <affinity.optimization.threshold> <affinity.reduction.threshold> <output.image.as.svg> <zoom.range> <plot.resolution> -n <TF.name> <core.binding.site.definition>  --output_name  <output.filename> <motif.input.file> <motif.input.format> <motif.use.pseudocounts> <motif.filter.keywords> <motif.use.pseudocounts> <motif.background.frequencies> <motif.output.name> <motif.exact.match>
+commandLine=python /build/tfsites-webportal/04-findTfSitesAlteredBySequenceVariation/04-combined-generateMotifDatabase-and-findTfSitesAlteredBySequenceVariation.py  -d <DNA.sequences.to.annotate> <sequences.file.type> <genome.file> <affinity.reference.data>  <PWM.data>  <PWM.minimum.score>    <SNV.effect.type.to.report> <affinity.optimization.threshold> <affinity.reduction.threshold> <output.image.as.svg> <zoom.range> <plot.resolution> -n <TF.name> <core.binding.site.definition>  --output_name  <output.filename> <motif.input.file> <motif.input.format> <motif.use.pseudocounts> <motif.filter.keywords> <motif.use.pseudocounts> <motif.background.frequencies> <motif.output.name> <motif.exact.match>
 
 cpuType=any
 description=FindTfSitesAlteredBySequenceVariation reports the effects of all possible in silico single-nucleotide variants (SNVs) in a given sequence, for one transcription factor. Possible SNV effects include increasing (or optimizing) the affinity/score of a binding site, decreasing the affinity/score of a binding site, deleting a binding site, or creating a binding site.
 documentationUrl=https://genepattern.github.io/tfsites.FindTfSitesAlteredBySequenceVariation/v2/
 fileFormat=
 job.cpuCount=
-job.docker.image=genepattern/tfsites\:19.0
+job.docker.image=genepattern/tfsites\:19.1
 language=any
 name=tfsites.FindTfSitesAlteredBySequenceVariation
 os=any
@@ -18,7 +18,7 @@ p1_MODE=IN
 p1_TYPE=FILE
 p1_default_value=
 p1_description=File containing one or more DNA sequences to be annotated.
-p1_fileFormat=.tsv;.txt
+p1_fileFormat=.tsv;.txt;.bed
 p1_flag=
 p1_name=DNA.sequences.to.annotate
 p1_numValues=1..1
@@ -296,6 +296,34 @@ p20_prefix_when_specified=--motif_exact_match
 p20_type=java.lang.String
 p20_value=FALSE\=FALSE;TRUE\=TRUE
 
+
+p21_MODE=
+p21_TYPE=TEXT
+p21_default_value=sequences
+p21_description=Specify whether the input file contains DNA sequences (TSV format) or genomic regions in BED format. Select "sequences" for a TSV file with explicit sequences, or "bed" if providing a BED file from an open chromatin assay or similar source.
+p21_fileFormat=
+p21_flag=
+p21_name=sequences.file.type
+p21_numValues=1..1
+p21_optional=
+p21_prefix=
+p21_prefix_when_specified=--sequences_file_type 
+p21_type=java.lang.String
+p21_value=sequences\=Sequences;bed\=BED Regions
+
+p22_MODE=IN
+p22_TYPE=FILE
+p22_default_value=https://datasets-tfsites-org.s3.us-east-2.amazonaws.com/hosted_data/genomes/binary/hg19.fa.chr2seq.pydict.pickle
+p22_description=Pickled genome file required when using BED file input. The genome is used to extract DNA sequences at the provided genomic coordinates. Some genomes are available on the <a href="https://datasets-tfsites-org.s3.us-east-2.amazonaws.com/index.html?prefix=hosted_data/genomes/binary/">TFSites hosted data S3 bucket.</a>
+p22_fileFormat=pickle;pkl
+p22_flag=
+p22_name=genome.file
+p22_numValues=0..1
+p22_optional=on
+p22_prefix=
+p22_prefix_when_specified=--genome_file 
+p22_type=java.io.File
+p22_value=
 
 privacy=public
 quality=development

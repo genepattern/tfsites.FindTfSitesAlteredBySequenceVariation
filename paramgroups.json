@@ -5,10 +5,11 @@
         "hidden": false,
         "parameters": [
             "DNA.sequences.to.annotate",
+            "sequences.file.type",
+            "genome.file",
             "TF.name",
             "core.binding.site.definition",
- 	        "affinity.reference.data",
-	    
+            "affinity.reference.data",
             "output.filename"
         ]
     },
@@ -22,7 +23,7 @@
             "affinity.optimization.threshold",
             "affinity.reduction.threshold",
             "plot.resolution",
-	    "zoom.range"
+            "zoom.range"
         ]
     },
      {
@@ -31,7 +32,7 @@
         "hidden": false,
         "parameters": [
             "PWM.data",
- 	        "PWM.minimum.score",
+            "PWM.minimum.score",
             "motif.input.file",
             "motif.input.format",
             "motif.filter.keywords",
